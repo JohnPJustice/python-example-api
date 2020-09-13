@@ -5,12 +5,12 @@ class Main(tornado.web.RequestHandler):
     def get(self):
         self.write("I hate mangos!!!")
 
-def first_app():
+def _app():
     return tornado.web.Application([
         (r"/", Main),
     ])
 
 if __name__ == "__main__":
-    app = first_app()
+    app = _app()
     app.listen(3000)
     tornado.ioloop.IOLoop.current().start()
